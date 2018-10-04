@@ -1,0 +1,20 @@
+<div class="container">
+
+      <h1 class="my-4 text-center text-lg-left">Video Gallery</h1>
+
+      <div class="row text-center text-lg-left" >
+
+        <div class="col-lg-3 col-md-4 col-xs-6" *ngFor="let user of video">
+          <a [routerLink]="['/video-details', user._id]" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://playingforchange.com/wp-content/uploads/2017/04/play-button-warm-yellow.png" alt="">
+             <p>{{user.video_name}}</p>
+          </a>
+
+        </div>
+        
+      </div>
+
+    </div>
+    <!-- /.container -->
+
+   

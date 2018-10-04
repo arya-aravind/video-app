@@ -1,0 +1,26 @@
+<div class="col-md-12">
+  <h2> User Details</h2>
+  <button class="btn btn-danger" (click)="addVideo()"> Add Video</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th [hidden]="Hide_id" class="hidden">Id</th>
+      <th>Video Name</th>
+      <th>Author</th>
+      <th>File Name</th>
+     <!--  <th>Action</th> -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of video">
+      <td [hidden]="Hide_id" class="hidden">{{user._id}}</td>
+      <td>{{user.video_name}}</td>
+      <td>{{user.author}}</td>
+      <td>{{user.filename}}</td>
+     <!--  <button class="btn btn-danger" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button>
+       -->
+   
+    </tr>
+    </tbody>
+  </table>
+</div>

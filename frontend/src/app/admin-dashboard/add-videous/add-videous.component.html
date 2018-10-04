@@ -1,0 +1,23 @@
+<div class="col-md-6">
+  <h2 class="text-center">Add Video</h2>
+  <form [formGroup]="addVideousForm" (ngSubmit)="onSubmit()" encType="multipart/form-data">
+    <div class="form-group">
+      <label for="email">Video Name :</label>
+      <input type="text" formControlName="vname" placeholder="Video Name" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="firstName">Author Name:</label>
+     <input formControlName="author_name" placeholder="Author Name" class="form-control" >
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Upload Video:</label>
+      <input type="file" 
+           id="file"
+           (change)="handleFileInput($event.target.files)">
+      </div>
+
+    <button class="btn btn-success">Submit</button>
+  </form>
+</div>

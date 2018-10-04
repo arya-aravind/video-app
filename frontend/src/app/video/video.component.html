@@ -1,0 +1,10 @@
+<video id="videoPlayer" controls src="../assets/uploads/{{video}}"></video>
+
+<script type="text/javascript">
+	const VP = document.getElementById('videoPlayer') // player
+const VPToggle = document.getElementById('toggleButton') // button
+VPToggle.addEventListener('click', function() {
+  if (VP.paused) VP.play()
+  else VP.pause()
+})
+</script>
