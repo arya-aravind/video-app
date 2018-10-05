@@ -55,13 +55,10 @@ router.post('/add_video',upload.single('fileKey'),function (req, res) {
 					});
 });
 
-router.route('/all_videous').get((req, res) => {
-    Videous.find((err, val) => {
-    	console.log(val);
-        if (err)
-            console.log(err);
-        else
-            res.json(val);
+router.get('/all_videous', VerifyToken,function (req, res) {
+    Videous.find({}, function (err, val) {
+        if (err) return res.status(500).send("There was a problem finding the books.");
+        res.status(200).send(val);
     });
 });
 
