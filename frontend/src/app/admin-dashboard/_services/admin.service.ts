@@ -42,9 +42,18 @@ console.log(formData);
        
     }
 
-    getVideous()
+   getVideous(token:string)
     {
-      return this.http.get<Video[]>(`${this.baseUrl}/api/video/all_videous`);
+      var token_string = new String();
+
+token = token.toString().replace(/"/g, "");
+
+
+      let headers: HttpHeaders = new HttpHeaders();
+      //  headers = headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    headers = headers.append('x-access-token',token); // Not added yet as this is the reason for the question
+   console.log(headers);
+      return this.http.get<Video[]>(`${this.baseUrl}/api/video/all_videous`,{headers});
     }
 
 }
