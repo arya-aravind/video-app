@@ -12,7 +12,7 @@ router.use(bodyParser.json());
 
 var Videous = require('./Video');
 
-const DIR = 'C://Users/ARYA ARAVIND/Desktop/video_app/frontend/src/assets/uploads';
+const DIR = 'path/ to your folder upload';
  
 let storage = multer.diskStorage({
     destination: (req, file, cb) => {
