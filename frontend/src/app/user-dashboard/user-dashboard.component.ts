@@ -13,7 +13,8 @@ video: Video[];
   constructor( private userService: UserService, private router: Router) { }
 
   ngOnInit() {
-  	this.userService.getVideous()
+  	  let user_val = localStorage.getItem("currentUserToken");
+  	this.userService.getVideous(user_val)
       .subscribe( data => {
         this.video = data
       });
