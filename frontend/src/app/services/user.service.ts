@@ -20,10 +20,20 @@ export class UserService {
         return this.http.post<any>(`${this.baseUrl}/api/auth/login`, { email: username, password: password })
     }
 
-    getVideous()
+  getVideous(token:string)
     {
-      return this.http.get<Video[]>(`${this.baseUrl}/api/video/all_videous`);
+       var token_string = new String();
+
+token = token.toString().replace(/"/g, "");
+
+
+      let headers: HttpHeaders = new HttpHeaders();
+      //  headers = headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    headers = headers.append('x-access-token',token); // Not added yet as this is the reason for the question
+
+      return this.http.get<Video[]>(`${this.baseUrl}/api/video/all_videous`,{headers});
     }
+
 
     getVideous_id(id:string)
     {
